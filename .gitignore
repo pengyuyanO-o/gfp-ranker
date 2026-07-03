@@ -1,0 +1,34 @@
+# Large embedding / feature files
+outputs/embeddings/
+outputs/features/features_all.npz
+outputs/features/feature_metadata.csv
+
+# All scored candidates (large)
+outputs/top10/all_candidates_scored.csv
+
+# Model weights (download separately)
+pretrained/
+*.pt
+
+# Logs and intermediate results
+outputs/logs/
+outputs/processed/gfp_processed.csv
+outputs/processed/gfp_raw_dedup.csv
+outputs/results/predictions_*.csv
+outputs/embeddings/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Conda
+.conda/

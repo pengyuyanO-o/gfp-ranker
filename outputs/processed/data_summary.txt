@@ -1,0 +1,44 @@
+Total samples: 141572
+GFP types: 4
+  avGFP: 51715
+  amacGFP: 33809
+  ppluGFP: 31480
+  cgreGFP: 24568
+Brightness min=1.2834 max=4.6030 mean=3.3367 median=3.6561
+WT rows: 4
+  amacGFP WT Brightness=3.9707
+  avGFP WT Brightness=3.7192
+  cgreGFP WT Brightness=4.4969
+  ppluGFP WT Brightness=4.2258
+Single-point mutations: 4606
+Combination mutations (>=2): 136962
+WT entries: 4
+Mutation count distribution:
+  count=0: 4
+  count=1: 4606
+  count=2: 50316
+  count=3: 39186
+  count=4: 22225
+  count=5: 12235
+  count=6: 6512
+  count=7: 3400
+  count=8: 1729
+  count=9: 739
+  count=10: 358
+  count=11: 145
+  count=12: 51
+  count=13: 30
+  count=14: 12
+  count=15: 2
+  count=16: 2
+  count=17: 3
+  count=18: 4
+  count=19: 1
+  count=20: 1
+  count=21: 4
+  count=22: 1
+  count=23: 1
+  count=24: 1
+  count=41: 1
+  count=42: 2
+  count=43: 1

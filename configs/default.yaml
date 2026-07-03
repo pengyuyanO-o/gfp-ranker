@@ -1,0 +1,54 @@
+paths:
+  project_dir: .                                          # set to repo root, or leave as "."
+  data_xlsx: data/GFP_data.xlsx                          # path to mutation-brightness Excel file
+  wt_seq_file: data/wt_sequences.txt                     # path to WT sequence file
+  esm2_weight: pretrained/esm2_t33_650M_UR50D.pt         # download: see README Installation
+  prott5_weight: pretrained/prot_t5_xl_uniref50/pytorch_model.bin  # optional, unused by default
+
+environment:
+  use_gpu: true
+  cuda_visible_devices: "0"
+  require_cuda: true
+
+data:
+  eps: 1.0e-8
+  position_indexing: mature_protein_0based  # pos=index in full seq (Met excluded from numbering)
+  max_allowed_mismatch_ratio: 0.2
+
+esm2:
+  batch_size: 32
+  repr_layer: 33
+  use_fp16: true
+  cache_dir: outputs/embeddings/esm2
+
+features:
+  use_esm2: true
+  use_physchem: true
+  use_single_prior: true
+  use_prott5: false
+
+splits:
+  seeds: [0, 1, 2, 3, 4]
+  random_train_ratio: 0.7
+  random_val_ratio: 0.15
+  random_test_ratio: 0.15
+  leave_position_ratio: 0.2
+
+training:
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.0001
+  epochs: 80
+  early_stopping_patience: 12
+  dropout: 0.2
+  lambda_rank_list: [0.5]
+  seeds: [0, 1, 2]
+
+top10:
+  generate_candidates_if_missing: true
+  beneficial_single_top_quantile: 0.2
+  min_combination_order: 2
+  max_combination_order: 5
+  max_candidates_per_gfp_type: 10000
+  uncertainty_beta: 0.5
+  final_topk: 10
